@@ -1,0 +1,15 @@
+[core]
+    editor = /usr/bin/vim
+[user]
+	name = yosu
+	email = woodstock830@gmail.com
+[alias]
+	co = checkout
+	st = status
+	br = branch
+	ci = commit
+[color]
+	ui = true
+
+[hub]
+protocol = https
