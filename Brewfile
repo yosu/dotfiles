@@ -9,6 +9,7 @@ install git
 
 # Shell
 install zsh
+install tmux
 
 # Remove outdated versions from the cellar
 cleanup
