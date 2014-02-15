@@ -10,7 +10,7 @@ SRC_DIR=~/dotfiles                              # dotfiles directory
 BACKUP_DIR=~/dotfiles_old/$(date +%Y%m%d%H%M%S) # old dotfiles backup directory
 
 # list of files/folders to symlink in homedir
-FILES="zshrc oh-my-zsh zsh-custom tmux.conf gitconfig vim vimrc vimbackups gemrc nvm"
+FILES="zshrc oh-my-zsh zsh-custom tmux.conf gitconfig vim vimrc vimbackups gemrc"
 
 ##########
 
@@ -82,12 +82,5 @@ install_vim_bundle () {
     vim +BundleInstall +qall
 }
 
-install_nvm () {
-    if [[ ! -d $SRC_DIR/.nvm/ ]]; then
-        git clone https://github.com/creationix/nvm.git
-    fi
-}
-
 install_vim_bundle
 install_zsh
-install_nvm
