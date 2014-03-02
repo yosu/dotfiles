@@ -26,7 +26,7 @@ echo "done"
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $FILES
 for file in $FILES; do
-    if [ -f ~/.$file ]; then
+    if [ -e ~/.$file ]; then
         echo "Moving any existing dotfiles from ~ to $BACKUP_DIR"
         mv ~/.$file $BACKUP_DIR
     fi
