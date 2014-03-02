@@ -16,3 +16,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Fixed TMUX window name
+# http://superuser.com/questions/306028/tmux-and-zsh-custom-prompt-bug-with-window-name
+export DISABLE_AUTO_TITLE=true
