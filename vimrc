@@ -1,3 +1,6 @@
+" encoding
+set encoding=utf-8
+
 " flip paste mode
 nnoremap <F4> :set invpaste paste?<CR>
 
