@@ -2,7 +2,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
-ZSH_THEME="johndbritton"
+ZSH_THEME="yosu"
 
 # Load my oh-my-zsh customizations
 ZSH_CUSTOM=$HOME/.zsh-custom
