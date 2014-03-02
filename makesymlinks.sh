@@ -10,7 +10,7 @@ SRC_DIR=~/dotfiles                              # dotfiles directory
 BACKUP_DIR=~/dotfiles_old/$(date +%Y%m%d%H%M%S) # old dotfiles backup directory
 
 # list of files/folders to symlink in homedir
-FILES="zshrc oh-my-zsh zsh-custom tmux.conf gitconfig vim vimrc vimbackups gemrc"
+FILES="gemrc gitconfig oh-my-zsh tmux.conf tmux.conf.local vim vimbackups vimrc zshrc zsh-custom"
 
 ##########
 
@@ -46,6 +46,15 @@ sudo_command() {
 SCRIPT
 }
 
+append_line () {
+    local LINE=$1
+    local FILE=$2
+    
+    if [ $(grep "$LINE" "$FILE" | wc -l) -eq 0 ]; then
+        echo $LINE >> $FILE
+    fi
+}
+
 install_zsh () {
     # Test to see if zshell is installed.  If it is:
     if [ -f /bin/zsh -o -f /usr/local/bin/zsh ]; then
@@ -66,6 +75,9 @@ install_zsh () {
     
             chsh -s $ZSH
         fi
+	
+	# Set the tmux default shell to zsh
+	append_line "set-option -g default-shell $ZSH" "$SRC_DIR/tmux.conf.local"
     else
         echo "Please install zsh, then re-run this script!"
     fi
