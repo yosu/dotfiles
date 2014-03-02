@@ -6,7 +6,7 @@
 
 NVM_REPO=https://github.com/creationix/nvm.git 
 NVM_ROOT=$HOME/.nvm
-RC_FILE=$HOME/.zshrc
+RC_FILE=$HOME/.zshrc.local
 
 die () {
     echo $1 >&2

@@ -10,7 +10,7 @@ SRC_DIR=~/dotfiles                              # dotfiles directory
 BACKUP_DIR=~/dotfiles_old/$(date +%Y%m%d%H%M%S) # old dotfiles backup directory
 
 # list of files/folders to symlink in homedir
-FILES="gemrc gitconfig oh-my-zsh tmux.conf tmux.conf.local vim vimbackups vimrc zshrc zsh-custom"
+FILES="gemrc gitconfig oh-my-zsh tmux.conf tmux.conf.local vim vimbackups vimrc zshrc zsrc.local zsh-custom"
 
 ##########
 
