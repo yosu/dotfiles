@@ -37,5 +37,9 @@ write_profile 'eval "$(rbenv init -)"'
 mkdir $RBENV_PLUGIN_DIR
 git clone $RUBYBUILDER_REPO $RBENV_PLUGIN_DIR/ruby-build || die "git clone failure : $RUBYBUILDER_REPO"
 
+### setup plugins
+git clone https://github.com/sstephenson/rbenv-gem-rehash.git $RBENV_PLUGIN_DIR/rbenv-gem-rehash || die "git clone failure : rbenv-gem-rehash"
+git clone https://github.com/ianheggie/rbenv-binstubs.git $RBENV_PLUGIN_DIR/rbenv-binstubs || die "git clone failure : rbenv-binstubs"
+
 ### load profile
 exec $SHELL -l
