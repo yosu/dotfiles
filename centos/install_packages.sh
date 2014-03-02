@@ -1,2 +1,2 @@
 #!/bin/sh
-sudo yum install -y zsh tmux
+sudo yum install -y zsh tmux vim
