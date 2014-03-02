@@ -1,3 +1,6 @@
+# Load environmet specific configurations
+source $HOME/.zshrc.local
+
 # Path to oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -13,4 +16,3 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-source $HOME/.zshrc.local
