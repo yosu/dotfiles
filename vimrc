@@ -18,7 +18,7 @@ set nocompatible
 set number
 set hidden
 
-colorscheme desert
+colorscheme thankful_eyes
 
 set backspace=indent,eol,start " backspace deletes indent and end-of-line
 
@@ -143,6 +143,7 @@ Bundle 'bufexplorer.zip'
 Bundle 'honza/vim-snippets'
 Bundle "mattn/emmet-vim"
 Bundle 'othree/html5.vim'
+Bundle 'godlygeek/csapprox'
 
 filetype plugin indent on     " required!
 
