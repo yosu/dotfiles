@@ -34,18 +34,6 @@ for file in $FILES; do
     ln -s $SRC_DIR/$file ~/.$file
 done
 
-sudo_command() {
-    local COMMAND=$1
-
-    # clear any previous sudo permission
-    sudo -k
-
-    # run inside sudo
-    sudo bash <<SCRIPT
-        $COMMAND
-SCRIPT
-}
-
 append_line () {
     local LINE=$1
     local FILE=$2
@@ -64,18 +52,6 @@ install_zsh () {
         fi
     
         local ZSH=$(which zsh)
-        # Set the default shell to zsh if it isn't currently set to zsh
-        if [[ ! $(echo $SHELL) == $ZSH ]]; then
-            # The default shell must be registered at /etc/shells
-            if [ $(grep "$ZSH" /etc/shells | wc -l) -eq 0 ]; then
-                echo "Append '$ZSH' to /etc/shells"
-                sudo_command "echo $ZSH >> /etc/shells"
-                echo "done"
-            fi
-    
-            chsh -s $ZSH
-        fi
-	
 	# Set the tmux default shell to zsh
 	append_line "set-option -g default-shell $ZSH" "$SRC_DIR/tmux.conf.local"
     else
