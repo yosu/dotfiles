@@ -2,5 +2,3 @@ oh-my-zsh/
 vim/bundle/
 nvm/
 vimbackups/*
-tmux.conf.local
-zshrc.local

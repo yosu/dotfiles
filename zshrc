@@ -1,6 +1,3 @@
-# Load environmet specific configurations
-source $HOME/.zshrc.local
-
 # Path to oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
