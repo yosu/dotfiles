@@ -13,6 +13,11 @@ BACKUP_DIR=~/dotfiles_old/$(date +%Y%m%d%H%M%S) # old dotfiles backup directory
 FILES="gemrc gitconfig oh-my-zsh tmux.conf vim vimbackups vimrc zshrc zsh-custom"
 
 ##########
+# check preconditions
+if ! type -P zsh > /dev/null; then
+    echo "Please install zsh, then re-run this script!"
+    exit 1
+fi
 
 # create dotfiles_old in homedir
 echo -n "Creating $BACKUP_DIR for backup of any existing dotfiles in ~ ..."
@@ -43,19 +48,10 @@ append_line () {
     fi
 }
 
-install_zsh () {
-    # Test to see if zshell is installed.  If it is:
-    if [ -f /bin/zsh -o -f /usr/local/bin/zsh ]; then
-        # Clone oh-my-zsh repository from GitHub only if it isn't already present
-        if [[ ! -d $SRC_DIR/oh-my-zsh/ ]]; then
-            git clone https://github.com/robbyrussell/oh-my-zsh.git
-        fi
-    
-        local ZSH=$(which zsh)
-	# Set the tmux default shell to zsh
-	append_line "set-option -g default-shell $ZSH" "$SRC_DIR/tmux.conf"
-    else
-        echo "Please install zsh, then re-run this script!"
+install_oh_my_zsh () {
+    # Clone oh-my-zsh repository from GitHub only if it isn't already present
+    if [[ ! -d $SRC_DIR/oh-my-zsh/ ]]; then
+        git clone https://github.com/robbyrussell/oh-my-zsh.git
     fi
 }
 
@@ -70,5 +66,11 @@ install_vim_bundle () {
     vim +BundleInstall +qall
 }
 
+setup_tmux () {
+    # Set the tmux default shell to zsh
+    append_line "set-option -g default-shell $(which zsh)" "$SRC_DIR/tmux.conf"
+}
+
 install_vim_bundle
-install_zsh
+install_oh_my_zsh
+setup_tmux
