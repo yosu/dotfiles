@@ -20,3 +20,8 @@ export DISABLE_AUTO_TITLE=true
 
 # Make git diff show UTF8 encoded characters properly
 export LESSCHARSET=UTF-8
+
+# Load custom source files 
+for src in $HOME/.zsh-sources/*; do
+    source $src
+done
