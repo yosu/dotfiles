@@ -1,4 +1,2 @@
-oh-my-zsh/
-vim/bundle/
-nvm/
-vimbackups/*
+dotfiles/vim/bundle/
+dotfiles/vimbackups/*

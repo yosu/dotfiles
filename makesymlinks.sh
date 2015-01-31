@@ -6,11 +6,11 @@
 
 ########## Variables
 
-SRC_DIR=~/dotfiles                              # dotfiles directory
-BACKUP_DIR=~/dotfiles_old/$(date +%Y%m%d%H%M%S) # old dotfiles backup directory
+# http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in
+SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 
-# list of files/folders to symlink in homedir
-FILES="gemrc gitconfig oh-my-zsh tmux.conf vim vimbackups vimrc zshrc zsh-custom"
+SRC_DIR=$SCRIPT_DIR/dotfiles # dotfiles directory
+BACKUP_DIR=~/dotfiles_old    # old dotfiles backup directory
 
 ##########
 # check preconditions
@@ -29,14 +29,21 @@ echo -n "Changing to the $SRC_DIR directory ..."
 cd $SRC_DIR
 echo "done"
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $FILES
-for file in $FILES; do
+# make symlinks
+make_symlink () {
+    local file=$1
+
     if [ -e ~/.$file ]; then
-        echo "Moving any existing dotfiles from ~ to $BACKUP_DIR"
+        echo "Moving any existing dotfiles from $HOME to $BACKUP_DIR"
         mv ~/.$file $BACKUP_DIR
     fi
+
     echo "Creating symlink to $file in home directory."
     ln -s $SRC_DIR/$file ~/.$file
+}
+
+for path in $SRC_DIR/*; do
+    make_symlink $(basename $path)
 done
 
 append_line () {
@@ -50,8 +57,8 @@ append_line () {
 
 install_oh_my_zsh () {
     # Clone oh-my-zsh repository from GitHub only if it isn't already present
-    if [[ ! -d $SRC_DIR/oh-my-zsh/ ]]; then
-        git clone https://github.com/robbyrussell/oh-my-zsh.git
+    if [[ ! -d ~/.oh-my-zsh/ ]]; then
+        git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
     fi
 }
 
