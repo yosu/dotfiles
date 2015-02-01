@@ -14,14 +14,20 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Fixed TMUX window name
+# Fix TMUX window name
 # http://superuser.com/questions/306028/tmux-and-zsh-custom-prompt-bug-with-window-name
 export DISABLE_AUTO_TITLE=true
 
-# Make git diff show UTF8 encoded characters properly
+# Make 'git diff' show UTF8 encoded characters properly
 export LESSCHARSET=UTF-8
 
 # Load custom source files 
-for src in $HOME/.zsh-sources/*; do
-    source $src
+## Avoid warning 'no matches found' when the glob is not match.
+unsetopt nomatch
+for file in $HOME/.zsh-sources/*; do
+    ## Check if the glob gets expanded to existing files.
+    ## If not, file here will be exactly the pattern above
+    [ -e $file ] || break;
+    source $file
 done
+setopt nomatch
