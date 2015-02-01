@@ -24,11 +24,6 @@ echo -n "Creating $BACKUP_DIR for backup of any existing dotfiles in ~ ..."
 mkdir -p $BACKUP_DIR
 echo "done"
 
-# change to the dotfiles directory
-echo -n "Changing to the $SRC_DIR directory ..."
-cd $SRC_DIR
-echo "done"
-
 # make symlinks
 make_symlink () {
     local file=$1
@@ -67,7 +62,6 @@ install_vim_bundle () {
     if [[ ! -d $SRC_DIR/vim/bundle/ ]]; then
         echo "Installing vundle"
         git clone https://github.com/gmarik/vundle.git $SRC_DIR/vim/bundle/vundle
-        echo "done"
     fi
 
     vim +BundleInstall +qall
