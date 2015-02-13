@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 OS=${OS:-linux}
 VERSION=${VERSION:-1.4.1}
@@ -13,11 +14,12 @@ if [ ! -d $GOROOT ];then
     mkdir $GOROOT
 fi
 
-wget https://storage.googleapis.com/golang/${GO_SRC}
-tar -C $DEST_DIR -xzf $GO_SRC
-rm $GO_SRC
+#wget https://storage.googleapis.com/golang/${GO_SRC}
+#tar -C $DEST_DIR -xzf $GO_SRC
+#rm $GO_SRC
 
 cat << END > $PROF_FILE
 export GOROOT=$GOROOT
-export PATH=\$PATH:\$GOROOT/bin
+export GOPATH=\$HOME/.go
+export PATH=\$PATH:\$GOROOT/bin:\$GOPATH
 END
