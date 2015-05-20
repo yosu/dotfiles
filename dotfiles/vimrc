@@ -84,6 +84,7 @@ Plug 'vim-jp/vim-go-extra'
 Plug 'jiangmiao/auto-pairs'
 Plug 'AndrewRadev/switch.vim'
 Plug 'tpope/vim-endwise'
+Plug 'vim-scripts/ruby-matchit'
 
 call plug#end()
 
