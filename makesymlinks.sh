@@ -13,17 +13,6 @@ SRC_DIR=$SCRIPT_DIR/dotfiles # dotfiles directory
 BACKUP_DIR=~/dotfiles_old    # old dotfiles backup directory
 
 ##########
-# check preconditions
-if ! type -P zsh > /dev/null; then
-    echo "Please install zsh, then re-run this script!"
-    exit 1
-fi
-
-# create dotfiles_old in homedir
-echo -n "Creating $BACKUP_DIR for backup of any existing dotfiles in ~ ..."
-mkdir -p $BACKUP_DIR
-echo "done"
-
 # make symlinks
 make_symlink () {
     local file=$1
@@ -36,10 +25,6 @@ make_symlink () {
     echo "Creating symlink to $file in home directory."
     ln -s $SRC_DIR/$file ~/.$file
 }
-
-for path in $SRC_DIR/*; do
-    make_symlink $(basename $path)
-done
 
 append_line () {
     local LINE=$1
@@ -67,11 +52,33 @@ install_vim_bundle () {
     vim +BundleInstall +qall
 }
 
-setup_tmux () {
+setup_zsh () {
+    # check preconditions
+    if ! type -P zsh > /dev/null; then
+        echo "Please install zsh, then re-run this script!"
+        exit 1
+    fi
+
+    # Clone oh-my-zsh repository from GitHub only if it isn't already present
+    if [[ ! -d ~/.oh-my-zsh/ ]]; then
+        git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    fi
+
     # Set the tmux default shell to zsh
-    append_line "set-option -g default-shell $(which zsh)" "$SRC_DIR/tmux.conf"
+    append_line "set-option -g default-shell $(which zsh)" "$SRC_DIR/tmux.shell.conf"
 }
 
+make_symlinks () {
+    # create dotfiles_old in homedir
+    echo -n "Creating $BACKUP_DIR for backup of any existing dotfiles in ~ ..."
+    mkdir -p $BACKUP_DIR
+    echo "done"
+
+    for path in $SRC_DIR/*; do
+        make_symlink $(basename $path)
+    done
+}
+
+setup_zsh
+make_symlinks
 install_vim_bundle
-install_oh_my_zsh
-setup_tmux
