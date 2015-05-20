@@ -42,14 +42,15 @@ install_oh_my_zsh () {
     fi
 }
 
-install_vim_bundle () {
-    # Install vundle only if it isn't already present
-    if [[ ! -d $SRC_DIR/vim/bundle/ ]]; then
-        echo "Installing vundle"
-        git clone https://github.com/gmarik/vundle.git $SRC_DIR/vim/bundle/vundle
+install_vim_plug () {
+    # Install plug only if it isn't already present
+    if [[ ! -e $SRC_DIR/vim/autoload/plug.vim ]]; then
+        echo "Installing vim-plug"
+        curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     fi
 
-    vim +BundleInstall +qall
+    vim +PlugInstall +qall
 }
 
 setup_zsh () {
@@ -81,4 +82,4 @@ make_symlinks () {
 
 setup_zsh
 make_symlinks
-install_vim_bundle
+install_vim_plug

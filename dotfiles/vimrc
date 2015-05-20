@@ -63,39 +63,27 @@ au BufRead,BufNewFile *.scala set filetype=scala
 au BufRead,BufNewFile *.ts set filetype=typescript
 au BufRead,BufNewFile *.json set filetype=javascript
 
-"Vundle
+"vim-plug
+call plug#begin('~/.vim/plugged')
 
-set nocompatible               " be iMproved
-filetype off                   " required!
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/neocomplcache'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'rbgrouleff/bclose.vim'
+Plug 'bufexplorer.zip'
+Plug 'honza/vim-snippets'
+Plug 'mattn/emmet-vim'
+Plug 'othree/html5.vim'
+Plug 'godlygeek/csapprox'
+Plug 'fatih/vim-go'
+Plug 'google/vim-ft-go'
+Plug 'vim-jp/vim-go-extra'
+Plug 'jiangmiao/auto-pairs'
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
-
-" My Bundles here:
-"
-" original repos on github
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
-Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/neosnippet'
-Bundle 'Shougo/neosnippet-snippets'
-Bundle 'rbgrouleff/bclose.vim'
-Bundle 'bufexplorer.zip'
-Bundle 'honza/vim-snippets'
-Bundle "mattn/emmet-vim"
-Bundle 'othree/html5.vim'
-Bundle 'godlygeek/csapprox'
-Bundle 'fatih/vim-go'
-Bundle 'google/vim-ft-go'
-Bundle 'vim-jp/vim-go-extra'
-Bundle 'jiangmiao/auto-pairs'
-
-filetype plugin indent on     " required!
+call plug#end()
 
 " unite.vim
 " reference: http://d.hatena.ne.jp/ruedap/20110110/vim_unite_plugin
