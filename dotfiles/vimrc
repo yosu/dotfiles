@@ -83,6 +83,7 @@ Plug 'google/vim-ft-go'
 Plug 'vim-jp/vim-go-extra'
 Plug 'jiangmiao/auto-pairs'
 Plug 'AndrewRadev/switch.vim'
+Plug 'tpope/vim-endwise'
 
 call plug#end()
 
