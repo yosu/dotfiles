@@ -1,15 +1,9 @@
-# Make sure we’re using the latest Homebrew
-update
-
-# Upgrade any already-installed formulae
-upgrade
-
 # Version Control
-install git
+brew 'git'
 
 # Shell
-install zsh
-install tmux
+brew 'zsh'
+brew 'tmux'
 
-# Remove outdated versions from the cellar
-cleanup
+# Editor
+brew 'vim', args: ['with-lua', 'HEAD']
