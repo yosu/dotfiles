@@ -69,7 +69,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'Shougo/unite.vim'
-Plug 'Shougo/neocomplcache'
+Plug 'Shougo/neocomplete'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'rbgrouleff/bclose.vim'
@@ -128,9 +128,8 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vspli
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>qu
 
-" neocomplcache
-let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
-" neocomplcache end
+" neocomplete
+let g:neocomplete#enable_at_startup = 1
 
 " neosnippet
 " Plugin key-mappings.
