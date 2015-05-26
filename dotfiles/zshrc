@@ -31,3 +31,6 @@ for file in $HOME/.zsh-sources/*; do
     source $file
 done
 setopt nomatch
+
+# Don't share history for multiple sessions
+unsetopt share_history
