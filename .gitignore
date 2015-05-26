@@ -1,5 +1,6 @@
 dotfiles/vim/autoload/plug.vim
 dotfiles/vim/plugged/
+dotfiles/vim/.netrwhist
 dotfiles/vimbackups/*
 dotfiles/zsh-sources/*
 dotfiles/tmux.shell.conf
