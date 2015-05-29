@@ -74,7 +74,7 @@ Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'bufexplorer.zip'
-" Plug 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim'
 Plug 'othree/html5.vim'
 Plug 'godlygeek/csapprox'
@@ -145,7 +145,7 @@ if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
 
-" let g:neosnippet#snippets_directory='~/.vim/plugged/vim-snippets/snippets'
+let g:neosnippet#snippets_directory='~/.vim/plugged/vim-snippets/snippets'
 " neosnippet end
 
 " bufexplorer
