@@ -53,6 +53,14 @@ install_vim_plug () {
     vim +PlugInstall +qall
 }
 
+install_tmux_plugin_manager () {
+    # Install tmux plugin manager if it isn't already present
+    if [[ ! -e ~/.tmux/plugins ]]; then
+        echo "Installing Tmux Plugin Manager"
+        git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    fi
+}
+
 setup_zsh () {
     # check preconditions
     if ! type -P zsh > /dev/null; then
@@ -83,3 +91,4 @@ make_symlinks () {
 setup_zsh
 make_symlinks
 install_vim_plug
+install_tmux_plugin_manager
