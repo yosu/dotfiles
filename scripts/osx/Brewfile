@@ -7,3 +7,6 @@ brew 'tmux'
 
 # Editor
 brew 'vim', args: ['with-lua', 'HEAD']
+
+# CLI Tools
+brew 'jq'
