@@ -86,6 +86,7 @@ Plug 'AndrewRadev/switch.vim'
 Plug 'tpope/vim-endwise'
 Plug 'vim-scripts/ruby-matchit'
 Plug 'scrooloose/syntastic'
+Plug 'kchmck/vim-coffee-script'
 
 call plug#end()
 
