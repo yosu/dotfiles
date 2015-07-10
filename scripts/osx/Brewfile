@@ -10,3 +10,4 @@ brew 'vim', args: ['with-lua', 'HEAD']
 
 # CLI Tools
 brew 'jq'
+brew 'tig'
