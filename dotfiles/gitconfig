@@ -16,3 +16,5 @@ protocol = https
 
 [ghq]
     root = ~/.ghq
+[push]
+	default = simple
