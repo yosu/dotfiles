@@ -177,3 +177,6 @@ nmap <C-b> \be
 " load sources
 source ~/.vim/sources/perl.vim
 source ~/.vim/sources/go.vim
+
+" open quickfix list after any grep invocation
+autocmd QuickFixCmdPost *grep* cwindow
