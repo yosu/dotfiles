@@ -1,14 +1,15 @@
 #!/bin/bash
 set -e
 
-OS=${OS:-linux}
-VERSION=${VERSION:-1.4.1}
+OS=${OS:-darwin}
+VERSION=${VERSION:-1.4.2}
 ARCH=${ARCH:-amd64}
-GO_SRC=go${VERSION}.${OS}-${ARCH}.tar.gz
+OPT=${OPT:--osx10.8}
+GO_SRC=go${VERSION}.${OS}-${ARCH}${OPT}.tar.gz
 PROF_FILE=$HOME/.zsh-sources/go
 
 DEST_DIR=${DEST_DIR:-$HOME}
-GOROOT=$DEST_DIR/go
+GOROOT=$DEST_DIR/.go
 
 if [ ! -d $GOROOT ];then
     mkdir $GOROOT
@@ -20,6 +21,6 @@ rm $GO_SRC
 
 cat << END > $PROF_FILE
 export GOROOT=$GOROOT
-export GOPATH=\$HOME/.go
+export GOPATH=\$HOME/go
 export PATH=\$PATH:\$GOROOT/bin:\$GOPATH/bin
 END
