@@ -12,3 +12,6 @@ brew 'vim', args: ['with-lua', 'HEAD']
 brew 'jq'
 brew 'tig'
 brew 'peco'
+
+# Languages
+brew 'pyenv'
