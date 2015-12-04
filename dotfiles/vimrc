@@ -186,3 +186,6 @@ autocmd QuickFixCmdPost *grep* cwindow
 
 " move to end of line on insert mode
 imap <C-e> A
+
+" GoImport
+nmap <C-i> :GoImport 
