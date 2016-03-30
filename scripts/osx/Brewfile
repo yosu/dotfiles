@@ -17,3 +17,6 @@ tap 'caius/jo'
 brew 'jo'
 
 brew 'direnv'
+
+# Languages
+brew 'pyenv'

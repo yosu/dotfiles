@@ -90,6 +90,7 @@ Plug 'scrooloose/syntastic'
 Plug 'kchmck/vim-coffee-script'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
+Plug 'othree/yajs.vim'
 
 call plug#end()
 
@@ -97,16 +98,18 @@ call plug#end()
 " RubyのチェックをRuboCopで行います。
 let g:syntastic_ruby_checkers = ['rubocop']
 
+let g:syntastic_mode_map = { "mode": "passive" }
+
 " ファイルのオープン時もチェックを実行します。
 " 保存時のみチェックをする場合は、0を指定します。
-let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_open = 1
 
 " 「mode」にpassiveを指定すると、「:SyntasticCheck」を実行したときのみチェックが実行されます。
 " 「mode」にpassiveを指定し、あわせて「active_filetypes」を指定することで、例外条件を設定します。
 " 以下のように指定すると、Rubyの場合のみファイルの保存時(オープン時)に自動でチェックが実行されます。
-let g:syntastic_mode_map = { "mode": "passive",
-            \"active_filetypes": ["ruby"],
-            \"passive_filetypes": [] }"
+" let g:syntastic_mode_map = { "mode": "passive",
+"             \"active_filetypes": ["ruby"],
+"             \"passive_filetypes": [] }"
 
 " unite.vim
 " reference: http://d.hatena.ne.jp/ruedap/20110110/vim_unite_plugin
@@ -180,3 +183,6 @@ source ~/.vim/sources/go.vim
 
 " open quickfix list after any grep invocation
 autocmd QuickFixCmdPost *grep* cwindow
+
+" move to end of line on insert mode
+imap <C-e> A
