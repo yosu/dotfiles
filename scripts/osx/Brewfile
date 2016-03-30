@@ -12,3 +12,8 @@ brew 'vim', args: ['with-lua', 'HEAD']
 brew 'jq'
 brew 'tig'
 brew 'peco'
+
+tap 'caius/jo'
+brew 'jo'
+
+brew 'direnv'
