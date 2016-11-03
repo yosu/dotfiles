@@ -46,6 +46,12 @@ function! RTrim()
 endfunction
 autocmd BufWritePre * call RTrim()
 
+augroup HighlightTrailingSpaces
+  autocmd!
+  autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
+  autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
+augroup END
+
 " Change cursor color with IME state
 if has('multi_byte_ime')
   highlight CursorIM guifg=NONE guibg=Red
@@ -188,4 +194,4 @@ autocmd QuickFixCmdPost *grep* cwindow
 imap <C-e> A
 
 " GoImport
-nmap <C-i> :GoImport 
+nmap <C-i> :GoImport
