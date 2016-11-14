@@ -1,5 +1,6 @@
 [core]
     editor = vim
+    excludesfile = ~/.gitignore
 [user]
 	name = yosu
 	email = woodstock830@gmail.com
