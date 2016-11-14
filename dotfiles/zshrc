@@ -34,3 +34,5 @@ setopt nomatch
 
 # Don't share history for multiple sessions
 unsetopt share_history
+
+export EDITOR=vim
