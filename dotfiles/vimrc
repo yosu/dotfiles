@@ -97,6 +97,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'othree/yajs.vim'
+Plug 'elixir-lang/vim-elixir'
 
 call plug#end()
 
