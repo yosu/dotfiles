@@ -18,5 +18,9 @@ brew 'jo'
 
 brew 'direnv'
 
+tap 'jmespath/jmespath'
+brew 'jp'
+
 # Languages
 brew 'pyenv'
+

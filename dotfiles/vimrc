@@ -8,6 +8,13 @@ nnoremap <F4> :set invpaste paste?<CR>
 nnoremap <F5> :<C-u>edit $MYVIMRC<CR>
 nnoremap <F6> :<C-u>source $MYVIMRC<CR>
 
+" Insert a charctor and escape (<Leader> key is mapped to \ by default)
+nnoremap <Leader>i i_<ESC>r
+
+" Graphviz Plugin Setting
+nnoremap <silent> ,gc :GraphvizCompile<CR>
+nnoremap <silent> ,gs :GraphvizShow<CR>
+
 syntax on
 set visualbell t_vb=
 set tabstop=4
@@ -17,6 +24,12 @@ set autoindent
 set nocompatible
 set number
 set hidden
+
+" http://qiita.com/mitsuru793/items/2d464f30bd091f5d0fef
+augroup fileTypeIndent
+  autocmd!
+  autocmd BufNewFile,BufRead *.yml setlocal tabstop=2 softtabstop=2 shiftwidth=2
+augroup END
 
 colorscheme Tomorrow-Night-Bright
 
@@ -98,6 +111,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'othree/yajs.vim'
 Plug 'elixir-lang/vim-elixir'
+Plug 'wannesm/wmgraphviz.vim'
 
 call plug#end()
 
