@@ -112,6 +112,7 @@ Plug 'tpope/vim-rails'
 Plug 'othree/yajs.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'wannesm/wmgraphviz.vim'
+Plug 'kannokanno/previm'
 
 call plug#end()
 
@@ -210,3 +211,6 @@ imap <C-e> A
 
 " GoImport
 nmap <C-i> :GoImport
+
+" Previm configuration
+let g:previm_open_cmd ='open -a "Google Chrome"'
