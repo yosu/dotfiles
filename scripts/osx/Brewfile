@@ -26,3 +26,4 @@ brew 'pyenv'
 
 # Cask
 cask 'jetbrains-toolbox'
+cask 'docker'
