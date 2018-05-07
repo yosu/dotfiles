@@ -6,7 +6,7 @@ brew 'zsh'
 brew 'tmux'
 
 # Editor
-brew 'vim', args: ['with-lua', 'HEAD']
+brew 'vim', args: ['with-lua']
 
 # CLI Tools
 brew 'jq'
