@@ -21,6 +21,8 @@ brew 'direnv'
 tap 'jmespath/jmespath'
 brew 'jp'
 
+brew 'awscli'
+
 # Languages
 brew 'pyenv'
 
