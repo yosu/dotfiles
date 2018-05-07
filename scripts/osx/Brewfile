@@ -24,3 +24,5 @@ brew 'jp'
 # Languages
 brew 'pyenv'
 
+# Cask
+cask 'jetbrains-toolbox'
