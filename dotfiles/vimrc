@@ -113,6 +113,7 @@ Plug 'othree/yajs.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'wannesm/wmgraphviz.vim'
 Plug 'kannokanno/previm'
+Plug 'scrooloose/nerdtree'
 
 call plug#end()
 
@@ -214,3 +215,6 @@ nmap <C-i> :GoImport
 
 " Previm configuration
 let g:previm_open_cmd ='open -a "Google Chrome"'
+
+" NERDTree
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
