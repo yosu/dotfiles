@@ -23,9 +23,6 @@ brew 'jp'
 
 brew 'awscli'
 
-# Languages
-brew 'pyenv'
-
 # Cask
 cask 'jetbrains-toolbox'
 cask 'docker'
