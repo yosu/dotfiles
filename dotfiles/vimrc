@@ -114,6 +114,8 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'wannesm/wmgraphviz.vim'
 Plug 'kannokanno/previm'
 Plug 'scrooloose/nerdtree'
+Plug 'derekwyatt/vim-scala'
+Plug 'vim-scripts/rspec.vim'
 
 call plug#end()
 
@@ -122,6 +124,8 @@ call plug#end()
 let g:syntastic_ruby_checkers = ['rubocop']
 
 let g:syntastic_mode_map = { "mode": "passive" }
+
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 
 " ファイルのオープン時もチェックを実行します。
 " 保存時のみチェックをする場合は、0を指定します。
