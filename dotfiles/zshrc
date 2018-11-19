@@ -11,6 +11,11 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# zplug
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+source $HOME/.zplug
+
 # User configuration
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -36,3 +41,6 @@ setopt nomatch
 unsetopt share_history
 
 export EDITOR=vim
+
+# Load zplug plugins
+zplug load

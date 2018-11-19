@@ -3,6 +3,8 @@ brew 'git'
 
 # Shell
 brew 'zsh'
+brew 'zplug'
+
 brew 'tmux'
 
 # Editor
@@ -22,6 +24,10 @@ tap 'jmespath/jmespath'
 brew 'jp'
 
 brew 'awscli'
+
+# For h3poteto/zsh-ec2ssh
+tap 'minamijoyo/myaws'
+brew 'myaws'
 
 # Cask
 cask 'jetbrains-toolbox'
