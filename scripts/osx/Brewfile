@@ -8,7 +8,7 @@ brew 'zplug'
 brew 'tmux'
 
 # Editor
-brew 'vim', args: ['with-lua']
+brew 'vim'
 
 # CLI Tools
 brew 'jq'
@@ -30,7 +30,7 @@ tap 'minamijoyo/myaws'
 brew 'myaws'
 
 # Cask
-cask 'jetbrains-toolbox'
+# cask 'jetbrains-toolbox'
 cask 'docker'
 
 # Languages
