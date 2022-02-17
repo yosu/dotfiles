@@ -17,7 +17,7 @@ source $ZPLUG_HOME/init.zsh
 source $HOME/.zplug
 
 # User configuration
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/opt/homebrew/bin:$PATH
 
 # Fix TMUX window name
 # http://superuser.com/questions/306028/tmux-and-zsh-custom-prompt-bug-with-window-name
