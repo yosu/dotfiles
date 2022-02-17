@@ -9,6 +9,9 @@
 	st = status
 	br = branch
 	ci = commit
+	code-changes = "!git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rg | head -10"
+	cc = "!git code-changes"
+	recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
 [color]
 	ui = true
 
@@ -19,3 +22,7 @@ protocol = https
     root = ~/.ghq
 [push]
 	default = simple
+[init]
+	defaultBranch = main
+[grep]
+    lineNumber = true
