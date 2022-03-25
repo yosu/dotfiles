@@ -25,6 +25,8 @@ brew 'jp'
 
 brew 'awscli'
 
+brew 'fswatch'
+
 # For h3poteto/zsh-ec2ssh
 tap 'minamijoyo/myaws'
 brew 'myaws'
